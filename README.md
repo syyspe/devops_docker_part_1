@@ -19,96 +19,96 @@
 [1.10](#exercise-116)
 
 ## Exercise 1.1
-177fb9656182  nginx "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago           clever_taussig
-5cf60a294e6b  nginx "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago           friendly_wilson
-9bb2294fb974  nginx "nginx -g 'daemon of…"   About a minute ago   Up About a minute           80/tcp  keen_pike
+177fb9656182  nginx "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago           clever_taussig  
+5cf60a294e6b  nginx "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago           friendly_wilson  
+9bb2294fb974  nginx "nginx -g 'daemon of…"   About a minute ago   Up About a minute           80/tcp  keen_pike  
 
 ## Excercise 1.2
 [Contents](#contents)
-### I have other work related images / containers on my computer, so I grep the output for nginx images only
-### instead of listing them all here and cluttering the output.
+### I have other work related images / containers on my computer, so I grep the output for nginx images only  
+### instead of listing them all here and cluttering the output.  
+  
+syyspe@debian95:/mnt/devt/DevOps$ docker ps -a | grep nginx  
+177fb9656182 nginx "nginx -g 'daemon of…" 5 minutes ago Exited (0) 4 minutes ago   clever_taussig  
+5cf60a294e6b nginx "nginx -g 'daemon of…" 5 minutes ago Exited (0) 4 minutes ago   friendly_wilson  
+9bb2294fb974 nginx "nginx -g 'daemon of…" 5 minutes ago Exited (0) 18 seconds ago  keen_pike  
 
-syyspe@debian95:/mnt/devt/DevOps$ docker ps -a | grep nginx
-177fb9656182        nginx                   "nginx -g 'daemon of…"   5 minutes ago       Exited (0) 4 minutes ago                        clever_taussig
-5cf60a294e6b        nginx                   "nginx -g 'daemon of…"   5 minutes ago       Exited (0) 4 minutes ago                        friendly_wilson
-9bb2294fb974        nginx                   "nginx -g 'daemon of…"   5 minutes ago       Exited (0) 18 seconds ago                       keen_pike
+syyspe@debian95:/mnt/devt/DevOps$ docker rm 177fb9656182 5cf60a294e6b 9bb2294fb974  
+177fb9656182  
+5cf60a294e6b  
+9bb2294fb974  
 
-syyspe@debian95:/mnt/devt/DevOps$ docker rm 177fb9656182 5cf60a294e6b 9bb2294fb974
-177fb9656182
-5cf60a294e6b
-9bb2294fb974
+syyspe@debian95:/mnt/devt/DevOps$ docker images | grep nginx  
+nginx  latest 719cd2e3ed04 8 days ago 109MB  
+syyspe@debian95:/mnt/devt/DevOps$ docker rmi 719cd2e3ed04  
+Untagged: nginx:latest  
+Untagged: nginx@sha256:bdbf36b7f1f77ffe7bd2a32e59235dff6ecf131e3b6b5b96061c652f30685f3a  
+Deleted: sha256:719cd2e3ed04781b11ed372ec8d712fac66d5b60a6fb6190bf76b7d18cb50105  
+Deleted: sha256:e9b6506fb887de50972aefd99d7c5eb56b1a8e757ed953cdfecb86b5359bcb22  
+Deleted: sha256:55d9d9692a9615a28d183a42bc3881a72a39393feba3664e669e7affb78daa76  
+Deleted: sha256:cf5b3c6798f77b1f78bf4e297b27cfa5b6caa982f04caeb5de7d13c255fd7a1e  
 
-syyspe@debian95:/mnt/devt/DevOps$ docker images | grep nginx
-nginx                                     latest              719cd2e3ed04        8 days ago          109MB
-syyspe@debian95:/mnt/devt/DevOps$ docker rmi 719cd2e3ed04
-Untagged: nginx:latest
-Untagged: nginx@sha256:bdbf36b7f1f77ffe7bd2a32e59235dff6ecf131e3b6b5b96061c652f30685f3a
-Deleted: sha256:719cd2e3ed04781b11ed372ec8d712fac66d5b60a6fb6190bf76b7d18cb50105
-Deleted: sha256:e9b6506fb887de50972aefd99d7c5eb56b1a8e757ed953cdfecb86b5359bcb22
-Deleted: sha256:55d9d9692a9615a28d183a42bc3881a72a39393feba3664e669e7affb78daa76
-Deleted: sha256:cf5b3c6798f77b1f78bf4e297b27cfa5b6caa982f04caeb5de7d13c255fd7a1e
-
-syyspe@debian95:/mnt/devt/DevOps$ docker ps -a | grep nginx
-syyspe@debian95:/mnt/devt/DevOps$ docker images | grep nginx
-syyspe@debian95:/mnt/devt/DevOps$
+syyspe@debian95:/mnt/devt/DevOps$ docker ps -a | grep nginx  
+syyspe@debian95:/mnt/devt/DevOps$ docker images | grep nginx  
+syyspe@debian95:/mnt/devt/DevOps$  
 
 ## Excercise 1.3
 [Contents](#contents)
- syyspe@debian95:/mnt/devt/DevOps$ docker run -it --rm devopsdockeruh/pull_exercise
-Give me the password: basics
-You found the correct password. Secret message is:
-"This is the secret message"
+ syyspe@debian95:/mnt/devt/DevOps$ docker run -it --rm devopsdockeruh/pull_exercise  
+Give me the password: basics  
+You found the correct password. Secret message is:  
+"This is the secret message"  
 
 
 ## Excercise 1.4
 [Contents](#contents)
 ### Secret message: "Docker is easy"
 ### Commands:
-syyspe@debian95:/mnt/devt/DevOps$ docker run -d --name ex14 devopsdockeruh/exec_bash_exercise
-Unable to find image 'devopsdockeruh/exec_bash_exercise:latest' locally
-latest: Pulling from devopsdockeruh/exec_bash_exercise
-741437d97401: Pull complete
-34d8874714d7: Pull complete
-0a108aa26679: Pull complete
-7f0334c36886: Pull complete
-65c95cb8b3be: Pull complete
-a36b708560f8: Pull complete
-4090f912e6c7: Pull complete
-ce5fe2607c2e: Pull complete
-9400f5f657d6: Pull complete
-c4919883f7fa: Pull complete
-Digest: sha256:c463832132d1fb0b8b3b60348a6fc36fda7512a4ef2d1050e8bea7b6a6d7a2f3
-Status: Downloaded newer image for devopsdockeruh/exec_bash_exercise:latest
-ae4c926bbc37e564d8b3ba631cbf6fd5406aafe3d8686ebf873c5fc32b91fc5b
+syyspe@debian95:/mnt/devt/DevOps$ docker run -d --name ex14 devopsdockeruh/exec_bash_exercise  
+Unable to find image 'devopsdockeruh/exec_bash_exercise:latest' locally  
+latest: Pulling from devopsdockeruh/exec_bash_exercise  
+741437d97401: Pull complete  
+34d8874714d7: Pull complete  
+0a108aa26679: Pull complete  
+7f0334c36886: Pull complete  
+65c95cb8b3be: Pull complete  
+a36b708560f8: Pull complete  
+4090f912e6c7: Pull complete  
+ce5fe2607c2e: Pull complete  
+9400f5f657d6: Pull complete  
+c4919883f7fa: Pull complete  
+Digest: sha256:c463832132d1fb0b8b3b60348a6fc36fda7512a4ef2d1050e8bea7b6a6d7a2f3  
+Status: Downloaded newer image for devopsdockeruh/exec_bash_exercise:latest  
+ae4c926bbc37e564d8b3ba631cbf6fd5406aafe3d8686ebf873c5fc32b91fc5b  
 
-syyspe@debian95:/mnt/devt/DevOps$ docker ps
-CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
-ae4c926bbc37        devopsdockeruh/exec_bash_exercise   "node index"        31 seconds ago      Up 28 seconds                           ex14
+syyspe@debian95:/mnt/devt/DevOps$ docker ps  
+CONTAINER ID  IMAGE                             COMMAND      CREATED        STATUS         PORTS NAMES  
+ae4c926bbc37  devopsdockeruh/exec_bash_exercise "node index" 31 seconds ago Up 28 seconds        ex14  
 
-syyspe@debian95:/mnt/devt/DevOps$ docker exec -it ex14 bash
-root@ae4c926bbc37:/usr/app# tail -f ./logs.txt
-Wed, 19 Jun 2019 18:41:08 GMT
-Wed, 19 Jun 2019 18:41:11 GMT
-Wed, 19 Jun 2019 18:41:14 GMT
-Wed, 19 Jun 2019 18:41:17 GMT
-Secret message is:
-"Docker is easy"
-read escape sequence
-syyspe@debian95:/mnt/devt/DevOps$ docker kill ex14
+syyspe@debian95:/mnt/devt/DevOps$ docker exec -it ex14 bash  
+root@ae4c926bbc37:/usr/app# tail -f ./logs.txt  
+Wed, 19 Jun 2019 18:41:08 GMT  
+Wed, 19 Jun 2019 18:41:11 GMT  
+Wed, 19 Jun 2019 18:41:14 GMT  
+Wed, 19 Jun 2019 18:41:17 GMT  
+Secret message is:  
+"Docker is easy"  
+read escape sequence  
+syyspe@debian95:/mnt/devt/DevOps$ docker kill ex14  
 
 ## Excercise 1.5
 [Contents](#contents)
-syyspe@debian95:/mnt/devt/DevOps$ docker run -it --name ex15 fav_distro:xenial sh -c 'apt-get update; apt-get install curl; read -p "Input website:"  website; echo "Searching..."; sleep 1; curl http://$website'
-Get:1 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
-Get:2 http://security.ubuntu.com/ubuntu 
-
-*<... removed a lot of updating & curl installation ...>*
-
-148 added, 0 removed; done.
-Running hooks in /etc/ca-certificates/update.d...
-done.
-Input website:helsinki.fi
-Searching...
+syyspe@debian95:/mnt/devt/DevOps$ docker run -it --name ex15 fav_distro:xenial sh -c 'apt-get update; apt-get install curl; read -p "Input website:"  website; echo "Searching...";   sleep 1; curl http://$website'  
+Get:1 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]  
+Get:2 http://security.ubuntu.com/ubuntu  
+  
+*<... removed a lot of updating & curl installation ...>*  
+  
+148 added, 0 removed; done.  
+Running hooks in /etc/ca-certificates/update.d...  
+done.  
+Input website:helsinki.fi  
+Searching...  
 ```
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html><head>
@@ -124,114 +124,114 @@ syyspe@debian95:/mnt/devt/DevOps$
 [Contents](#contents)
 ### Dockerfile in folder [ex16](ex16)
 
-syyspe@debian95:/mnt/devt/DevOps/ex16$ docker pull devopsdockeruh/overwrite_cmd_exercise
-Using default tag: latest
-latest: Pulling from devopsdockeruh/overwrite_cmd_exercise
-e79bb959ec00: Pull complete
-d4b7902036fe: Pull complete
-1b2a72d4e030: Pull complete
-d54db43011fd: Pull complete
-69d473365bb3: Pull complete
-6e2490ee2dc8: Pull complete
-727ad86f629c: Pull complete
-23840d79cb44: Pull complete
-4cfc73104030: Pull complete
-68e8fecd059c: Pull complete
-5746e9d6f35a: Pull complete
-Digest: sha256:0c2a9eb2e7dc97e9217abbd13d6c45767cc09f7e82b7dce113fe2322161f38a6
-Status: Downloaded newer image for devopsdockeruh/overwrite_cmd_exercise:latest
+syyspe@debian95:/mnt/devt/DevOps/ex16$ docker pull devopsdockeruh/overwrite_cmd_exercise  
+Using default tag: latest  
+latest: Pulling from devopsdockeruh/overwrite_cmd_exercise  
+e79bb959ec00: Pull complete  
+d4b7902036fe: Pull complete  
+1b2a72d4e030: Pull complete  
+d54db43011fd: Pull complete  
+69d473365bb3: Pull complete  
+6e2490ee2dc8: Pull complete  
+727ad86f629c: Pull complete  
+23840d79cb44: Pull complete  
+4cfc73104030: Pull complete  
+68e8fecd059c: Pull complete  
+5746e9d6f35a: Pull complete  
+Digest: sha256:0c2a9eb2e7dc97e9217abbd13d6c45767cc09f7e82b7dce113fe2322161f38a6  
+Status: Downloaded newer image for devopsdockeruh/overwrite_cmd_exercise:latest  
 
-syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run -it devopsdockeruh/overwrite_cmd_exercise
+syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run -it devopsdockeruh/overwrite_cmd_exercise  
 
--h,             --help                  to show this message
--a [age],       --adult [age]           to check if you're older than 18
--c [time],      --clock [time]          to start a clock
--t [size],      --triangle [size]       to draw a triangle, takes second argument as the size
+-h,             --help                  to show this message  
+-a [age],       --adult [age]           to check if you're older than 18  
+-c [time],      --clock [time]          to start a clock  
+-t [size],      --triangle [size]       to draw a triangle, takes second argument as the size    
 
 syyspe@debian95:/mnt/devt/DevOps/ex16$
 
 ### OK, create Dockerfile that gives --clock as param for the base image command:
-ENTRYPOINT ["./start.sh"] *(this spied from docker hub)*
+ENTRYPOINT ["./start.sh"] *(this spied from docker hub)*  
 ### => my Dockerfile contents (Dockerfile in folder ex16):
-FROM devopsdockeruh/overwrite_cmd_exercise 
-CMD ["--clock"]
+FROM devopsdockeruh/overwrite_cmd_exercise  
+CMD ["--clock"]  
 
-syyspe@debian95:/mnt/devt/DevOps/ex16$ docker build -t ex16 .
-Sending build context to Docker daemon  2.048kB
-Step 1/2 : FROM devopsdockeruh/overwrite_cmd_exercise
- ---> 0f7f459b76c9
-Step 2/2 : CMD ["--clock"]
- ---> Running in 020028ecf0d9
-Removing intermediate container 020028ecf0d9
- ---> 38c620c71c58
-Successfully built 38c620c71c58
-Successfully tagged ex16:latest
+syyspe@debian95:/mnt/devt/DevOps/ex16$ docker build -t ex16 .  
+Sending build context to Docker daemon  2.048kB  
+Step 1/2 : FROM devopsdockeruh/overwrite_cmd_exercise  
+ ---> 0f7f459b76c9  
+Step 2/2 : CMD ["--clock"]  
+ ---> Running in 020028ecf0d9  
+Removing intermediate container 020028ecf0d9  
+ ---> 38c620c71c58  
+Successfully built 38c620c71c58  
+Successfully tagged ex16:latest  
 
-syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run --name ex16 ex16
-1
-2
-3
-4
-*<...>*
+syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run --name ex16 ex16  
+1  
+2  
+3  
+4  
+*<...>*  
 ### Kill it in another terminal:
 syyspe@debian95:/mnt/devt/DevOps$ docker kill ex16
 
 
-syyspe@debian95:/mnt/devt/DevOps/ex16$ docker build -t docker-clock .
-Sending build context to Docker daemon  2.048kB
-Step 1/2 : FROM devopsdockeruh/overwrite_cmd_exercise
- ---> 0f7f459b76c9
-Step 2/2 : CMD ["--clock"]
- ---> Using cache
- ---> 38c620c71c58
-Successfully built 38c620c71c58
-Successfully tagged docker-clock:latest
+syyspe@debian95:/mnt/devt/DevOps/ex16$ docker build -t docker-clock .  
+Sending build context to Docker daemon  2.048kB  
+Step 1/2 : FROM devopsdockeruh/overwrite_cmd_exercise  
+ ---> 0f7f459b76c9  
+Step 2/2 : CMD ["--clock"]  
+ ---> Using cache  
+ ---> 38c620c71c58  
+Successfully built 38c620c71c58  
+Successfully tagged docker-clock:latest  
 
-syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run docker-clock
-1
-2
-3
-*<...>*
+syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run docker-clock  
+1  
+2  
+3  
+*<...>*  
 
 ## Excercise 1.7
 ### Dockerfile and shell script in folder [ex17](ex17)
 [Contents](#contents)
-syyspe@debian95:/mnt/devt/DevOps/ex17$ docker build -t curler .
-Sending build context to Docker daemon  3.072kB
-Step 1/6 : FROM ubuntu:16.04
- ---> 13c9f1285025
-Step 2/6 : RUN apt-get update && apt-get install -y curl
- ---> Running in 1fa66d5f31f9
-Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
-Get:2 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+syyspe@debian95:/mnt/devt/DevOps/ex17$ docker build -t curler .  
+Sending build context to Docker daemon  3.072kB  
+Step 1/6 : FROM ubuntu:16.04  
+ ---> 13c9f1285025  
+Step 2/6 : RUN apt-get update && apt-get install -y curl  
+ ---> Running in 1fa66d5f31f9  
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]  
+Get:2 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]  
 
-*<... removed a lot of updating & curl installation ...>*
+*<... removed a lot of updating & curl installation ...>*  
 
-Updating certificates in /etc/ssl/certs...
-148 added, 0 removed; done.
-Running hooks in /etc/ca-certificates/update.d...
-done.
-Removing intermediate container 1fa66d5f31f9
- ---> c7a14578ead7
-Step 3/6 : RUN mkdir /code
- ---> Running in 95be72bcab3e
-Removing intermediate container 95be72bcab3e
- ---> 4f2f894c848c
-Step 4/6 : WORKDIR /code
- ---> Running in 4971707b67f1
-Removing intermediate container 4971707b67f1
- ---> a2f68346f116
-Step 5/6 : COPY start.sh /code/
- ---> c78a19e08bf2
-Step 6/6 : ENTRYPOINT [ "/code/start.sh" ]
- ---> Running in 555f111f86d2
-Removing intermediate container 555f111f86d2
- ---> 78e45ca41511
-Successfully built 78e45ca41511
-Successfully tagged curler:latest
-syyspe@debian95:/mnt/devt/DevOps/ex17$ docker run -it --rm curler
-Input website: helsinki.fi
-Searching...
+Updating certificates in /etc/ssl/certs...  
+148 added, 0 removed; done.  
+Running hooks in /etc/ca-certificates/update.d...  
+done.  
+Removing intermediate container 1fa66d5f31f9  
+ ---> c7a14578ead7  
+Step 3/6 : RUN mkdir /code  
+ ---> Running in 95be72bcab3e  
+Removing intermediate container 95be72bcab3e  
+ ---> 4f2f894c848c  
+Step 4/6 : WORKDIR /code  
+ ---> Running in 4971707b67f1  
+Removing intermediate container 4971707b67f1  
+ ---> a2f68346f116  
+Step 5/6 : COPY start.sh /code/  
+ ---> c78a19e08bf2  
+Step 6/6 : ENTRYPOINT [ "/code/start.sh" ]  
+ ---> Running in 555f111f86d2  
+Removing intermediate container 555f111f86d2  
+ ---> 78e45ca41511  
+Successfully built 78e45ca41511  
+Successfully tagged curler:latest  
+syyspe@debian95:/mnt/devt/DevOps/ex17$ docker run -it --rm curler  
+Input website: helsinki.fi  
+Searching...  
 ```
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html><head>
