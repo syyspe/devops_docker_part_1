@@ -1,6 +1,6 @@
 # DevOps with Docker - Part 1
 
-##Contents
+## Contents
 [1.1](#exercise-11)
 [1.2](#exercise-12)
 [1.3](#exercise-13)
@@ -18,12 +18,12 @@
 [1.10](#exercise-115)
 [1.10](#exercise-116)
 
-##Exercise 1.1
+## Exercise 1.1
 177fb9656182        nginx                   "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago                       clever_taussig
 5cf60a294e6b        nginx                   "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago                       friendly_wilson
 9bb2294fb974        nginx                   "nginx -g 'daemon of…"   About a minute ago   Up About a minute           80/tcp              keen_pike
 
-##Excercise 1.2
+## Excercise 1.2
 [Contents](#contents)
 ### I have other work related images / containers on my computer, so I grep the output for nginx images only
 ### instead of listing them all here and cluttering the output.
