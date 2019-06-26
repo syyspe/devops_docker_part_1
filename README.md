@@ -19,9 +19,9 @@
 [1.10](#exercise-116)
 
 ## Exercise 1.1
-177fb9656182        nginx                   "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago                       clever_taussig
-5cf60a294e6b        nginx                   "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago                       friendly_wilson
-9bb2294fb974        nginx                   "nginx -g 'daemon of…"   About a minute ago   Up About a minute           80/tcp              keen_pike
+177fb9656182  nginx "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago           clever_taussig
+5cf60a294e6b  nginx "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago           friendly_wilson
+9bb2294fb974  nginx "nginx -g 'daemon of…"   About a minute ago   Up About a minute           80/tcp  keen_pike
 
 ## Excercise 1.2
 [Contents](#contents)
@@ -52,7 +52,7 @@ syyspe@debian95:/mnt/devt/DevOps$ docker ps -a | grep nginx
 syyspe@debian95:/mnt/devt/DevOps$ docker images | grep nginx
 syyspe@debian95:/mnt/devt/DevOps$
 
-##Excercise 1.3
+## Excercise 1.3
 [Contents](#contents)
  syyspe@debian95:/mnt/devt/DevOps$ docker run -it --rm devopsdockeruh/pull_exercise
 Give me the password: basics
@@ -60,7 +60,7 @@ You found the correct password. Secret message is:
 "This is the secret message"
 
 
-##Excercise 1.4
+## Excercise 1.4
 [Contents](#contents)
 ### Secret message: "Docker is easy"
 ### Commands:
@@ -96,7 +96,7 @@ Secret message is:
 read escape sequence
 syyspe@debian95:/mnt/devt/DevOps$ docker kill ex14
 
-##Excercise 1.5
+## Excercise 1.5
 [Contents](#contents)
 syyspe@debian95:/mnt/devt/DevOps$ docker run -it --name ex15 fav_distro:xenial sh -c 'apt-get update; apt-get install curl; read -p "Input website:"  website; echo "Searching..."; sleep 1; curl http://$website'
 Get:1 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
@@ -109,6 +109,7 @@ Running hooks in /etc/ca-certificates/update.d...
 done.
 Input website:helsinki.fi
 Searching...
+```
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html><head>
 <title>301 Moved Permanently</title>
@@ -116,11 +117,12 @@ Searching...
 <h1>Moved Permanently</h1>
 <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
 </body></html>
+```
 syyspe@debian95:/mnt/devt/DevOps$
 
-##Excercise 1.6
+## Excercise 1.6
 [Contents](#contents)
-###Dockerfile in folder [ex16](ex16)
+### Dockerfile in folder [ex16](ex16)
 
 syyspe@debian95:/mnt/devt/DevOps/ex16$ docker pull devopsdockeruh/overwrite_cmd_exercise
 Using default tag: latest
@@ -148,9 +150,9 @@ syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run -it devopsdockeruh/overwrite_c
 
 syyspe@debian95:/mnt/devt/DevOps/ex16$
 
-###OK, create Dockerfile that gives --clock as param for the base image command:
+### OK, create Dockerfile that gives --clock as param for the base image command:
 ENTRYPOINT ["./start.sh"] *(this spied from docker hub)*
-###=> my Dockerfile contents (Dockerfile in folder ex16):
+### => my Dockerfile contents (Dockerfile in folder ex16):
 FROM devopsdockeruh/overwrite_cmd_exercise 
 CMD ["--clock"]
 
@@ -171,7 +173,7 @@ syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run --name ex16 ex16
 3
 4
 *<...>*
-###Kill it in another terminal:
+### Kill it in another terminal:
 syyspe@debian95:/mnt/devt/DevOps$ docker kill ex16
 
 
@@ -191,8 +193,8 @@ syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run docker-clock
 3
 *<...>*
 
-##Excercise 1.7
-###Dockerfile and shell script in folder [ex17](ex17)
+## Excercise 1.7
+### Dockerfile and shell script in folder [ex17](ex17)
 [Contents](#contents)
 syyspe@debian95:/mnt/devt/DevOps/ex17$ docker build -t curler .
 Sending build context to Docker daemon  3.072kB
@@ -230,6 +232,7 @@ Successfully tagged curler:latest
 syyspe@debian95:/mnt/devt/DevOps/ex17$ docker run -it --rm curler
 Input website: helsinki.fi
 Searching...
+```
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html><head>
 <title>301 Moved Permanently</title>
@@ -237,9 +240,10 @@ Searching...
 <h1>Moved Permanently</h1>
 <p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
 </body></html>
+```
 syyspe@debian95:/mnt/devt/DevOps/ex17$
 
-##Excercise 1.8
+## Excercise 1.8
 [Contents](#contents)
 
 syyspe@debian95:/mnt/devt/DevOps/ex17$ docker pull devopsdockeruh/first_volume_exercise
@@ -286,9 +290,9 @@ Thu, 20 Jun 2019 07:30:35 GMT
 Thu, 20 Jun 2019 07:30:38 GMT
 syyspe@debian95:/mnt/devt/DevOps/ex18$
 
-##Excercise 1.9
+## Excercise 1.9
 [Contents](#contents)
-###Message: Ports configured correctly!!
+### Message: Ports configured correctly!!
 
 syyspe@debian95:/mnt/devt/DevOps/ex19$ docker run -it -p 80:80 --rm devopsdockeruh/ports_exercise:latest
 Unable to find image 'devopsdockeruh/ports_exercise:latest' locally
@@ -307,12 +311,12 @@ Status: Downloaded newer image for devopsdockeruh/ports_exercise:latest
 Listening on port 80, this means inside of the container. Use -p to map the port to a port of your local machine.
 ^Csyyspe@debian95:/mnt/devt/DevOps/ex19$
 
-##Excerise 1.10
+## Excerise 1.10
 [Contents](#contents)
-###I used node:10-stretch image from docker hub, as there was no requirements 
-###or instructions as to what image use as base. NOTE: I did 1.11 using ubuntu:16.04 as base :) 
-###Dockerfile in folder [ex110](ex110)
-###Message: Exercise 1.10: Congratulations! You configured your ports correctly!
+### I used node:10-stretch image from docker hub, as there was no requirements 
+### or instructions as to what image use as base. NOTE: I did 1.11 using ubuntu:16.04 as base :) 
+### Dockerfile in folder [ex110](ex110)
+### Message: Exercise 1.10: Congratulations! You configured your ports correctly!
 
 syyspe@debian95:/mnt/devt/DevOps/ex110$ git clone https://github.com/docker-hy/frontend-example-docker.git .
 Cloning into '.'...
@@ -321,7 +325,7 @@ remote: Total 133 (delta 0), reused 0 (delta 0), pack-reused 133
 Receiving objects: 100% (133/133), 156.31 KiB | 0 bytes/s, done.
 Resolving deltas: 100% (58/58), done.
 syyspe@debian95:/mnt/devt/DevOps/ex110$ 
-###=>created Dockerfile (available in folder [ex110](ex110))
+### =>created Dockerfile (available in folder [ex110](ex110))
 syyspe@debian95:/mnt/devt/DevOps/ex110$ ll
 total 366
 drwxrwxrwx 1 root root   4096 Jun 20 11:51 .
@@ -336,7 +340,7 @@ drwxrwxrwx 1 root root   4096 Jun 20 11:50 .git
 drwxrwxrwx 1 root root      0 Jun 20 11:50 src
 drwxrwxrwx 1 root root      0 Jun 20 11:50 util
 -rwxrwxrwx 1 root root   1708 Jun 20 11:50 webpack.config.js
-###=>build
+### =>build
 syyspe@debian95:/mnt/devt/DevOps/ex110$ docker build -t ex110 .
 Sending build context to Docker daemon  626.7kB
 Step 1/6 : FROM node:10-stretch
@@ -379,7 +383,7 @@ Removing intermediate container 8e3502101021
  ---> 62b5f49ccd48
 Successfully built 62b5f49ccd48
 Successfully tagged ex110:latest
-###=>run
+### =>run
 syyspe@debian95:/mnt/devt/DevOps/ex110$ docker run -it -p 5000:5000 --rm ex110:latest
 
 > frontend-example-docker@1.0.0 start /code
@@ -400,11 +404,11 @@ syyspe@debian95:/mnt/devt/DevOps/ex110$ docker run -it -p 5000:5000 --rm ex110:l
 INFO: Gracefully shutting down. Please wait...
 syyspe@debian95:/mnt/devt/DevOps/ex110$ 
 
-##Excercise 1.11
+## Excercise 1.11
 [Contents](#contents)
-###In this excercise I used ubuntu:16.04 as base image, and installed all the required stuff via Dockerfile.
-###Dockerfile available in available in [folder ex111](ex111)
-###Message: Port configured correctly, generated message in logs.txt 
+### In this excercise I used ubuntu:16.04 as base image, and installed all the required stuff via Dockerfile.
+### Dockerfile available in available in [folder ex111](ex111)
+### Message: Port configured correctly, generated message in logs.txt 
 
 syyspe@debian95:/mnt/devt/DevOps/ex111$ git clone https://github.com/docker-hy/backend-example-docker .
 Cloning into '.'...
@@ -414,7 +418,7 @@ remote: Compressing objects: 100% (3/3), done.
 remote: Total 87 (delta 0), reused 0 (delta 0), pack-reused 84
 Unpacking objects: 100% (87/87), done.
 syyspe@debian95:/mnt/devt/DevOps/ex111$
-###=>created Dockerfile (available in [folder ex111](ex111))
+### =>created Dockerfile (available in [folder ex111](ex111))
 syyspe@debian95:/mnt/devt/DevOps/ex111$ ll
 total 228
 drwxrwxrwx 1 root root   4096 Jun 20 13:12 .
@@ -430,7 +434,7 @@ drwxrwxrwx 1 root root   4096 Jun 20 13:09 .git
 -rwxrwxrwx 1 root root   1368 Jun 20 13:09 README.md
 drwxrwxrwx 1 root root   4096 Jun 20 13:09 server
 syyspe@debian95:/mnt/devt/DevOps/ex111$
-###=>run
+### =>run
 syyspe@debian95:/mnt/devt/DevOps/ex111$ touch logs.txt
 syyspe@debian95:/mnt/devt/DevOps/ex111$ docker run -it -v $(pwd)/logs.txt:/code/logs.txt -p 8000:8000 --rm ex112:latest
 
@@ -458,15 +462,15 @@ syyspe@debian95:/mnt/devt/DevOps/ex111$ cat logs.txt
 6/20/2019, 10:46:29 AM: Connection received in root
 syyspe@debian95:/mnt/devt/DevOps/ex111$
 
-##Exercise 1.12
+## Exercise 1.12
 [Contents](#contents)
-###NOTE: I run docker in virtual machine, and use browser from host machine, 
-###thus the use of IP address (virtual machine IP) instead of localhost
-###Edited dockerfiles containing the environent variables:
-###Frontend: [ex112/Dockerfile_ex110_edited](ex112/Dockerfile_ex110_edited)
-###Backend: [ex112/Dockerfile_ex111_edited](ex112/Dockerfile_ex111_edited)
+### NOTE: I run docker in virtual machine, and use browser from host machine, 
+### thus the use of IP address (virtual machine IP) instead of localhost
+### Edited dockerfiles containing the environent variables:
+### Frontend: [ex112/Dockerfile_ex110_edited](ex112/Dockerfile_ex110_edited)
+### Backend: [ex112/Dockerfile_ex111_edited](ex112/Dockerfile_ex111_edited)
 
-###=>rebuild backend with env variable set in Dockerfile
+### =>rebuild backend with env variable set in Dockerfile
 syyspe@debian95:/mnt/devt/DevOps/ex111$ docker build -t ex111 .
 Sending build context to Docker daemon  669.2kB
 Step 1/11 : FROM ubuntu:16.04
@@ -510,7 +514,7 @@ Removing intermediate container 6f9654fecf8a
 Successfully built ac639bc1c0d9
 Successfully tagged ex111:latest
 
-###=>rebuild frontend with env variable set in Dockerfile
+### =>rebuild frontend with env variable set in Dockerfile
 syyspe@debian95:/mnt/devt/DevOps/ex110$ docker build -t ex110 .
 Sending build context to Docker daemon  626.7kB
 Step 1/8 : FROM node:10-stretch
@@ -545,18 +549,18 @@ Removing intermediate container 5b45b2cb0d07
 Successfully built cda35c1952b3
 Successfully tagged ex110:latest
 
-###=>run backend
+### =>run backend
 syyspe@debian95:/mnt/devt/DevOps/ex111$ docker run -it -d -v $(pwd)/logs.txt:/code/logs.txt -p 8000:8000 --name ex111 --rm ex111:latest
-###=>run frontend
+### =>run frontend
 syyspe@debian95:/mnt/devt/DevOps/ex112$ docker run -it -d -p 5000:5000 --name ex110 --rm ex110:latest
 
-##Excercise 1.13
+## Excercise 1.13
 [Contents](#contents)
-###Dockerfile in [folder ex113](ex113)
-###message: <Press here>
-###         Success
+### Dockerfile in [folder ex113](ex113)
+### message: <Press here>
+###          Success
 
-###=>clone
+### =>clone
 syyspe@debian95:/mnt/devt/DevOps/ex113$ git clone https://github.com/docker-hy/spring-example-project.git .
 Cloning into '.'...
 remote: Enumerating objects: 36, done.
@@ -565,7 +569,7 @@ remote: Compressing objects: 100% (22/22), done.
 remote: Total 36 (delta 4), reused 36 (delta 4), pack-reused 0
 Unpacking objects: 100% (36/36), done.
 
-###=>created dockerfile
+### =>created dockerfile
 syyspe@debian95:/mnt/devt/DevOps/ex113$ ll
 total 31
 drwxrwxrwx 1 root root 4096 Jun 20 14:57 .
@@ -581,10 +585,10 @@ drwxrwxrwx 1 root root    0 Jun 20 14:56 .mvn
 drwxrwxrwx 1 root root    0 Jun 20 14:56 src
 syyspe@debian95:/mnt/devt/DevOps/ex113$
 
-###=>build
+### =>build
 syyspe@debian95:/mnt/devt/DevOps/ex113$ docker build -t ex113 .
 
-###=>run
+### =>run
 syyspe@debian95:/mnt/devt/DevOps/ex113$ docker run -it -p 8080:8080 --name ex113 --rm ex113
 
   .   ____          _            __ _ _
@@ -597,13 +601,13 @@ syyspe@debian95:/mnt/devt/DevOps/ex113$ docker run -it -p 8080:8080 --name ex113
 
 *<...>*
 
-##Excercise 1.14
+## Excercise 1.14
 [Contents](#contents)
-###Dockerfile available in [folder ex114](ex114)
-###message:New Press
-###        Total presses 4 *<...>*
+### Dockerfile available in [folder ex114](ex114)
+### message:New Press
+###         Total presses 4 *<...>*
 
-###=>clone
+### =>clone
 syyspe@debian95:/mnt/devt/DevOps/ex114$ git clone https://github.com/docker-hy/rails-example-project.git .
 Cloning into '.'...
 remote: Enumerating objects: 114, done.
@@ -614,7 +618,7 @@ Receiving objects: 100% (114/114), 27.01 KiB | 0 bytes/s, done.
 Resolving deltas: 100% (4/4), done.
 syyspe@debian95:/mnt/devt/DevOps/ex114$
 
-###=>created dockerfile
+### =>created dockerfile
 syyspe@debian95:/mnt/devt/DevOps/ex114$ ll
 total 41
 drwxrwxrwx 1 root root 4096 Jun 20 15:35 .
@@ -627,7 +631,7 @@ drwxrwxrwx 1 root root    0 Jun 20 15:32 db
 -rwxrwxrwx 1 root root  410 Jun 20 16:03 Dockerfile
 *<...>*
 
-###=>build
+### =>build
 syyspe@debian95:/mnt/devt/DevOps/ex114$ docker build -t ex114 .
 Sending build context to Docker daemon  233.5kB
 Step 1/13 : FROM ruby:2.6.0
@@ -635,7 +639,7 @@ Step 1/13 : FROM ruby:2.6.0
 Step 2/13 : RUN apt-get update && apt-get install -y curl
 *<...>*
 
-###=>run
+### =>run
 syyspe@debian95:/mnt/devt/DevOps/ex114$ docker run -it -p 3000:3000 --name ex114 --rm ex114:latest
 => Booting Puma
 => Rails 5.2.2.1 application starting in development
@@ -649,10 +653,10 @@ Use Ctrl-C to stop
 Started GET "/" for 192.168.116.1 at 2019-06-20 13:06:21 +0000
 *<...>*
 
-##Excercise 1.15
+## Excercise 1.15
 [Contents](#contents)
-###Docker repository: https://cloud.docker.com/repository/registry-1.docker.io/syysmeri/ex115
+### Docker repository: https://cloud.docker.com/repository/registry-1.docker.io/syysmeri/ex115
 
-##Excercise 1.16
+## Excercise 1.16
 [Contents](#contents)
-###App in heroku: https://ex116.herokuapp.com/
+### App in heroku: https://ex116.herokuapp.com/
