@@ -37,6 +37,7 @@ syyspe@debian95:/mnt/devt/DevOps$
 
 ## Excercise 1.3
 [Up](#excercises)
+
  syyspe@debian95:/mnt/devt/DevOps$ docker run -it --rm devopsdockeruh/pull_exercise  
 Give me the password: basics  
 You found the correct password. Secret message is:  
@@ -45,6 +46,7 @@ You found the correct password. Secret message is:
 
 ## Excercise 1.4
 [Up](#excercises)
+
 ### Secret message: "Docker is easy"
 ### Commands:
 syyspe@debian95:/mnt/devt/DevOps$ docker run -d --name ex14 devopsdockeruh/exec_bash_exercise  
