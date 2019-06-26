@@ -1,22 +1,22 @@
 # DevOps with Docker - Part 1
 
 ## Contents
-[1.1](#exercise-11)
-[1.2](#exercise-12)
-[1.3](#exercise-13)
-[1.4](#exercise-14)
-[1.5](#exercise-15)
-[1.6](#exercise-16)
-[1.7](#exercise-17)
-[1.8](#exercise-18)
-[1.9](#exercise-19)
-[1.10](#exercise-110)
-[1.11](#exercise-111)
-[1.12](#exercise-112)
-[1.13](#exercise-113)
-[1.14](#exercise-114)
-[1.15](#exercise-115)
-[1.16](#exercise-116)
+[1.1](#exercise-11)  
+[1.2](#exercise-12)  
+[1.3](#exercise-13)  
+[1.4](#exercise-14)  
+[1.5](#exercise-15)  
+[1.6](#exercise-16)  
+[1.7](#exercise-17)  
+[1.8](#exercise-18)  
+[1.9](#exercise-19)  
+[1.10](#exercise-110)  
+[1.11](#exercise-111)  
+[1.12](#exercise-112)  
+[1.13](#exercise-113)  
+[1.14](#exercise-114)  
+[1.15](#exercise-115)  
+[1.16](#exercise-116)  
 
 ## Exercise 1.1
 177fb9656182  nginx "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago           clever_taussig  
@@ -462,8 +462,7 @@ syyspe@debian95:/mnt/devt/DevOps/ex111$
 
 ## Exercise 1.12
 [Contents](#contents)
-### NOTE: I run docker in virtual machine, and use browser from host machine, 
-### thus the use of IP address (virtual machine IP) instead of localhost
+### NOTE: I run docker in virtual machine, and use browser from host machine, thus the use of IP address (virtual machine IP) instead of localhost
 ### Edited dockerfiles containing the environent variables:
 Frontend: [ex112/Dockerfile_ex110_edited](ex112/Dockerfile_ex110_edited)  
 Backend: [ex112/Dockerfile_ex111_edited](ex112/Dockerfile_ex111_edited)  
