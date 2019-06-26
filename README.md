@@ -1,22 +1,6 @@
 # DevOps with Docker - Part 1
 
-## Contents
-[1.1](#exercise-11)  
-[1.2](#exercise-12)  
-[1.3](#exercise-13)  
-[1.4](#exercise-14)  
-[1.5](#exercise-15)  
-[1.6](#exercise-16)  
-[1.7](#exercise-17)  
-[1.8](#exercise-18)  
-[1.9](#exercise-19)  
-[1.10](#exercise-110)  
-[1.11](#exercise-111)  
-[1.12](#exercise-112)  
-[1.13](#exercise-113)  
-[1.14](#exercise-114)  
-[1.15](#exercise-115)  
-[1.16](#exercise-116)  
+## Excercises
 
 ## Exercise 1.1
 177fb9656182  nginx "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago           clever_taussig  
@@ -24,7 +8,7 @@
 9bb2294fb974  nginx "nginx -g 'daemon of…"   About a minute ago   Up About a minute           80/tcp  keen_pike  
 
 ## Excercise 1.2
-[Contents](#contents)
+[Up](#excercises)
 ### I have other work related images / containers on my computer, so I grep the output for nginx images only instead of listing them all here and cluttering the output.  
   
 syyspe@debian95:/mnt/devt/DevOps$ docker ps -a | grep nginx  
@@ -52,7 +36,7 @@ syyspe@debian95:/mnt/devt/DevOps$ docker images | grep nginx
 syyspe@debian95:/mnt/devt/DevOps$  
 
 ## Excercise 1.3
-[Contents](#contents)
+[Up](#excercises)
  syyspe@debian95:/mnt/devt/DevOps$ docker run -it --rm devopsdockeruh/pull_exercise  
 Give me the password: basics  
 You found the correct password. Secret message is:  
@@ -60,7 +44,7 @@ You found the correct password. Secret message is:
 
 
 ## Excercise 1.4
-[Contents](#contents)
+[Up](#excercises)
 ### Secret message: "Docker is easy"
 ### Commands:
 syyspe@debian95:/mnt/devt/DevOps$ docker run -d --name ex14 devopsdockeruh/exec_bash_exercise  
@@ -96,7 +80,7 @@ read escape sequence
 syyspe@debian95:/mnt/devt/DevOps$ docker kill ex14  
 
 ## Excercise 1.5
-[Contents](#contents)
+[Up](#excercises)
 syyspe@debian95:/mnt/devt/DevOps$ docker run -it --name ex15 fav_distro:xenial sh -c 'apt-get update; apt-get install curl; read -p "Input website:"  website; echo "Searching...";   sleep 1; curl http://$website'  
 Get:1 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]  
 Get:2 http://security.ubuntu.com/ubuntu  
@@ -120,7 +104,7 @@ Searching...
 syyspe@debian95:/mnt/devt/DevOps$
 
 ## Excercise 1.6
-[Contents](#contents)
+[Up](#excercises)
 ### Dockerfile in folder [ex16](ex16)
 
 syyspe@debian95:/mnt/devt/DevOps/ex16$ docker pull devopsdockeruh/overwrite_cmd_exercise  
@@ -194,7 +178,7 @@ syyspe@debian95:/mnt/devt/DevOps/ex16$ docker run docker-clock
 
 ## Excercise 1.7
 ### Dockerfile and shell script in folder [ex17](ex17)
-[Contents](#contents)
+[Up](#excercises)
 syyspe@debian95:/mnt/devt/DevOps/ex17$ docker build -t curler .  
 Sending build context to Docker daemon  3.072kB  
 Step 1/6 : FROM ubuntu:16.04  
@@ -243,7 +227,7 @@ Searching...
 syyspe@debian95:/mnt/devt/DevOps/ex17$
 
 ## Excercise 1.8
-[Contents](#contents)
+[Up](#excercises)
 
 syyspe@debian95:/mnt/devt/DevOps/ex17$ docker pull devopsdockeruh/first_volume_exercise  
 Using default tag: latest  
@@ -290,7 +274,7 @@ Thu, 20 Jun 2019 07:30:38 GMT
 syyspe@debian95:/mnt/devt/DevOps/ex18$  
 
 ## Excercise 1.9
-[Contents](#contents)
+[Up](#excercises)
 ### Message: Ports configured correctly!!
 
 syyspe@debian95:/mnt/devt/DevOps/ex19$ docker run -it -p 80:80 --rm devopsdockeruh/ports_exercise:latest  
@@ -311,7 +295,7 @@ Listening on port 80, this means inside of the container. Use -p to map the port
 ^Csyyspe@debian95:/mnt/devt/DevOps/ex19$  
 
 ## Excerise 1.10
-[Contents](#contents)
+[Up](#excercises)
 ### I used node:10-stretch image from docker hub, as there was no requirements or instructions as to what image use as base. NOTE: I did 1.11 using ubuntu:16.04 as base :) 
 ### Dockerfile in folder [ex110](ex110)
 ### Message: Exercise 1.10: Congratulations! You configured your ports correctly!
@@ -403,7 +387,7 @@ INFO: Gracefully shutting down. Please wait...
 syyspe@debian95:/mnt/devt/DevOps/ex110$ 
 
 ## Excercise 1.11
-[Contents](#contents)
+[Up](#excercises)
 ### In this excercise I used ubuntu:16.04 as base image, and installed all the required stuff via Dockerfile.
 ### Dockerfile available in available in [folder ex111](ex111)
 ### Message: Port configured correctly, generated message in logs.txt 
@@ -461,7 +445,7 @@ syyspe@debian95:/mnt/devt/DevOps/ex111$ cat logs.txt
 syyspe@debian95:/mnt/devt/DevOps/ex111$  
 
 ## Exercise 1.12
-[Contents](#contents)
+[Up](#excercises)
 ### NOTE: I run docker in virtual machine, and use browser from host machine, thus the use of IP address (virtual machine IP) instead of localhost
 ### Edited dockerfiles containing the environent variables:
 Frontend: [ex112/Dockerfile_ex110_edited](ex112/Dockerfile_ex110_edited)  
@@ -552,7 +536,7 @@ syyspe@debian95:/mnt/devt/DevOps/ex111$ docker run -it -d -v $(pwd)/logs.txt:/co
 syyspe@debian95:/mnt/devt/DevOps/ex112$ docker run -it -d -p 5000:5000 --name ex110 --rm ex110:latest
 
 ## Excercise 1.13
-[Contents](#contents)
+[Up](#excercises)
 ### Dockerfile in [folder ex113](ex113)
 ### message: <Press here>
 ###          Success
@@ -600,7 +584,7 @@ syyspe@debian95:/mnt/devt/DevOps/ex113$ docker run -it -p 8080:8080 --name ex113
 *<...>*  
 
 ## Excercise 1.14
-[Contents](#contents)
+[Up](#excercises)
 ### Dockerfile available in [folder ex114](ex114)
 ### message:New Press
 ###         Total presses 4 *<...>*
@@ -652,9 +636,9 @@ Started GET "/" for 192.168.116.1 at 2019-06-20 13:06:21 +0000
 *<...>*  
 
 ## Excercise 1.15
-[Contents](#contents)
+[Up](#excercises)
 ### Docker repository: https://cloud.docker.com/repository/registry-1.docker.io/syysmeri/ex115
 
 ## Excercise 1.16
-[Contents](#contents)
+[Up](#excercises)
 ### App in heroku: https://ex116.herokuapp.com/
