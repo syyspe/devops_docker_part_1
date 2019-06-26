@@ -11,12 +11,12 @@
 [1.8](#exercise-18)
 [1.9](#exercise-19)
 [1.10](#exercise-110)
-[1.10](#exercise-111)
-[1.10](#exercise-112)
-[1.10](#exercise-113)
-[1.10](#exercise-114)
-[1.10](#exercise-115)
-[1.10](#exercise-116)
+[1.11](#exercise-111)
+[1.12](#exercise-112)
+[1.13](#exercise-113)
+[1.14](#exercise-114)
+[1.15](#exercise-115)
+[1.16](#exercise-116)
 
 ## Exercise 1.1
 177fb9656182  nginx "nginx -g 'daemon of…"   About a minute ago   Exited (0) 37 seconds ago           clever_taussig  
@@ -245,49 +245,49 @@ syyspe@debian95:/mnt/devt/DevOps/ex17$
 ## Excercise 1.8
 [Contents](#contents)
 
-syyspe@debian95:/mnt/devt/DevOps/ex17$ docker pull devopsdockeruh/first_volume_exercise
-Using default tag: latest
-latest: Pulling from devopsdockeruh/first_volume_exercise
-741437d97401: Pull complete
-34d8874714d7: Pull complete
-0a108aa26679: Pull complete
-7f0334c36886: Pull complete
-65c95cb8b3be: Pull complete
-a36b708560f8: Pull complete
-4090f912e6c7: Pull complete
-ce5fe2607c2e: Pull complete
-9400f5f657d6: Pull complete
-3ccbeb634bca: Pull complete
-Digest: sha256:0fe91ae116a340214cf013541bd311da7196d34a468e9daf74a8d0fdd3419c78
-Status: Downloaded newer image for devopsdockeruh/first_volume_exercise:latest
-syyspe@debian95:/mnt/devt/DevOps/ex17$ cd ..
-syyspe@debian95:/mnt/devt/DevOps$ mkdir ex18
-syyspe@debian95:/mnt/devt/DevOps$ cd ex18
-syyspe@debian95:/mnt/devt/DevOps/ex18$ docker run -it --rm devopsdockeruh/first_volume_exercise
-(node:1) ExperimentalWarning: The fs.promises API is experimental
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-^CClosing file
-syyspe@debian95:/mnt/devt/DevOps/ex18$ touch logs.txt
-syyspe@debian95:/mnt/devt/DevOps/ex18$ docker run -v $(pwd)/logs.txt:/usr/app/logs.txt -it --rm devopsdockeruh/first_volume_exercise
-(node:1) ExperimentalWarning: The fs.promises API is experimental
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-Wrote to file /usr/app/logs.txt
-^CClosing file
-syyspe@debian95:/mnt/devt/DevOps/ex18$ ll
-total 1
-drwxrwxrwx 1 root root  0 Jun 20 10:30 .
-drwxrwxrwx 1 root root  0 Jun 20 10:20 ..
--rwxrwxrwx 1 root root 90 Jun 20 10:30 logs.txt
-syyspe@debian95:/mnt/devt/DevOps/ex18$ cat logs.txt
-Thu, 20 Jun 2019 07:30:32 GMT
-Thu, 20 Jun 2019 07:30:35 GMT
-Thu, 20 Jun 2019 07:30:38 GMT
-syyspe@debian95:/mnt/devt/DevOps/ex18$
+syyspe@debian95:/mnt/devt/DevOps/ex17$ docker pull devopsdockeruh/first_volume_exercise  
+Using default tag: latest  
+latest: Pulling from devopsdockeruh/first_volume_exercise  
+741437d97401: Pull complete  
+34d8874714d7: Pull complete  
+0a108aa26679: Pull complete  
+7f0334c36886: Pull complete  
+65c95cb8b3be: Pull complete  
+a36b708560f8: Pull complete  
+4090f912e6c7: Pull complete  
+ce5fe2607c2e: Pull complete  
+9400f5f657d6: Pull complete  
+3ccbeb634bca: Pull complete  
+Digest: sha256:0fe91ae116a340214cf013541bd311da7196d34a468e9daf74a8d0fdd3419c78  
+Status: Downloaded newer image for devopsdockeruh/first_volume_exercise:latest  
+syyspe@debian95:/mnt/devt/DevOps/ex17$ cd ..  
+syyspe@debian95:/mnt/devt/DevOps$ mkdir ex18  
+syyspe@debian95:/mnt/devt/DevOps$ cd ex18  
+syyspe@debian95:/mnt/devt/DevOps/ex18$ docker run -it --rm devopsdockeruh/first_volume_exercise  
+(node:1) ExperimentalWarning: The fs.promises API is experimental  
+Wrote to file /usr/app/logs.txt  
+Wrote to file /usr/app/logs.txt  
+Wrote to file /usr/app/logs.txt  
+Wrote to file /usr/app/logs.txt  
+Wrote to file /usr/app/logs.txt  
+^CClosing file  
+syyspe@debian95:/mnt/devt/DevOps/ex18$ touch logs.txt  
+syyspe@debian95:/mnt/devt/DevOps/ex18$ docker run -v $(pwd)/logs.txt:/usr/app/logs.txt -it --rm devopsdockeruh/first_volume_exercise  
+(node:1) ExperimentalWarning: The fs.promises API is experimental  
+Wrote to file /usr/app/logs.txt  
+Wrote to file /usr/app/logs.txt  
+Wrote to file /usr/app/logs.txt  
+^CClosing file  
+syyspe@debian95:/mnt/devt/DevOps/ex18$ ll  
+total 1  
+drwxrwxrwx 1 root root  0 Jun 20 10:30 .  
+drwxrwxrwx 1 root root  0 Jun 20 10:20 ..  
+-rwxrwxrwx 1 root root 90 Jun 20 10:30 logs.txt  
+syyspe@debian95:/mnt/devt/DevOps/ex18$ cat logs.txt  
+Thu, 20 Jun 2019 07:30:32 GMT  
+Thu, 20 Jun 2019 07:30:35 GMT  
+Thu, 20 Jun 2019 07:30:38 GMT  
+syyspe@debian95:/mnt/devt/DevOps/ex18$  
 
 ## Excercise 1.9
 [Contents](#contents)
@@ -388,16 +388,16 @@ syyspe@debian95:/mnt/devt/DevOps/ex110$ docker run -it -p 5000:5000 --rm ex110:l
 > webpack --mode production && serve -s -l 5000 dist  
 
 *<... warnings etc. output removed...>*  
-
-   ┌────────────────────────────────────────────────┐  
-   │                                                │  
-   │   Serving!                                     │  
-   │                                                │  
-   │   - Local:            http://localhost:5000    │  
-   │   - On Your Network:  http://172.17.0.2:5000   │  
-   │                                                │  
-   └────────────────────────────────────────────────┘  
-
+  
+┌────────────────────────────────────────────────┐  
+│                                                │  
+│   Serving!                                     │  
+│                                                │  
+│   - Local:            http://localhost:5000    │  
+│   - On Your Network:  http://172.17.0.2:5000   │  
+│                                                │  
+└────────────────────────────────────────────────┘  
+  
 ^C  
 INFO: Gracefully shutting down. Please wait...  
 syyspe@debian95:/mnt/devt/DevOps/ex110$ 
@@ -588,14 +588,15 @@ syyspe@debian95:/mnt/devt/DevOps/ex113$ docker build -t ex113 .
 
 ### =>run
 syyspe@debian95:/mnt/devt/DevOps/ex113$ docker run -it -p 8080:8080 --name ex113 --rm ex113  
-
+```
   .   ____          _            __ _ _  
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \  
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \  
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )  
   '  |____| .__|_| |_|_| |_\__, | / / / /  
  =========|_|==============|___/=/_/_/_/  
- :: Spring Boot ::        (v2.1.3.RELEASE)  
+ :: Spring Boot ::        (v2.1.3.RELEASE)
+ ```  
 
 *<...>*  
 
